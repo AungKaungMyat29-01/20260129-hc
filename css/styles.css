@@ -1,0 +1,379 @@
+/* ====================
+  基本設定
+==================== */
+
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====================
+  全体スタイル
+==================== */
+
+body {
+  color: #222;
+  background-color: #fff;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+/* ====================
+  ヘッダー
+==================== */
+
+header {
+  background-color: #f8fbff;
+  padding: 0 0 60px;
+  text-align: center;
+  width: 100%;
+}
+
+/* ロゴ */
+.logo {
+  background-color: #fff;
+  padding: 20px 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: #1571da;
+  margin-bottom: 80px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* コピー全体 */
+.copy {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* コピー見出し */
+.copy h1 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+
+/* コピー本文 */
+.copy p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 5px;
+}
+
+/* ====================
+  メインセクション
+==================== */
+
+section {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 20px;
+}
+
+/* セクション見出し */
+section h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* セクション補足ラベル */
+.section-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1571da;
+  margin-bottom: 15px;
+  display: block;
+  letter-spacing: 0.1em;
+}
+
+/* セクションタイトル */
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* ====================
+  ボタン
+==================== */
+
+.btn-detail {
+  border: 2px solid #1571da;
+  background-color: #fff;
+  color: #1571da;
+  display: flex;
+  width: 240px;
+  height: 56px;
+  margin: 50px auto 0;
+  padding: 0 20px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.btn-detail:hover {
+  background-color: #1571da;
+  color: #fff;
+}
+
+/* ====================
+  理由カード
+==================== */
+
+.reason-cards {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-reason {
+  width: 380px;
+  min-height: 320px;
+  padding: 40px 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 背景用疑似要素 */
+.card-reason::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* ネットワーク/テクノロジーの抽象画 */
+  background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80") center center / cover no-repeat;
+  filter: blur(4px);
+  opacity: 0.4;
+}
+
+.card-reason::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-color: #fff;
+}
+
+.card-reason-number {
+  font-size: 60px;
+  font-weight: bold;
+  color: #1571da;
+  line-height: 1;
+}
+
+.card-reason-text {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+/* ====================
+  機能カード
+==================== */
+
+.func-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.card-func {
+  background: #f8fbff;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #e1e8f0;
+}
+
+.card-func.large {
+  width: calc(50% - 15px);
+  min-width: 480px;
+  padding: 30px;
+}
+
+.card-func.small {
+  width: calc(33.333% - 20px);
+  min-width: 320px;
+  padding: 30px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-func-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card-func.small .card-func-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.card-func-text {
+  flex: 1;
+}
+
+.card-func-text h3 {
+  font-size: 20px;
+  color: #1571da;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.card-func-text p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ====================
+  企業ロゴ（業界写真）
+==================== */
+
+.logo-corp-cards {
+  border: 1px solid #eee;
+  padding: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+  justify-content: center;
+  background-color: #fafafa;
+}
+
+.card-logo {
+  width: 140px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ====================
+  採用（事例）カード
+==================== */
+
+.recruit-cards {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-recruit {
+  width: 360px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.card-recruit:hover {
+  transform: translateY(-5px);
+}
+
+.card-recruit-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-recruit-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-recruit-title {
+  font-size: 18px;
+  color: #1571da;
+  font-weight: bold;
+  line-height: 1.5;
+  min-height: 3.0em;
+}
+
+.card-recruit-company {
+  font-size: 14px;
+  color: #666;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.card-recruit-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 0;
+  font-size: 13px;
+}
+
+.card-recruit-info dt {
+  width: 25%;
+  color: #888;
+}
+
+.card-recruit-info dd {
+  width: 75%;
+  font-weight: bold;
+  color: #222;
+}
+
+/* ====================
+  フッター
+==================== */
+
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 14px;
+}
